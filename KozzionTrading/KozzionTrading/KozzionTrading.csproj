@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFF4B397-7E1C-47FA-ACA4-B6F5D410BE0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KozzionTrading</RootNamespace>
+    <AssemblyName>KozzionTrading</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Indicators\AIndicator.cs" />
+    <Compile Include="Indicators\IIndicatorTemplate.cs" />
+    <Compile Include="Indicators\IndicatorBollingerBand.cs" />
+    <Compile Include="Indicators\IndicatorFusion.cs" />
+    <Compile Include="Indicators\IndicatorMachineLearning.cs" />
+    <Compile Include="Indicators\IndicatorMagicProfit.cs" />
+    <Compile Include="Indicators\IndicatorNull.cs" />
+    <Compile Include="Indicators\AIndicatorTemplate.cs" />
+    <Compile Include="Indicators\IndicatorTemplateSuperBollinger.cs" />
+    <Compile Include="Indicators\IndicatorSuperBollingerFast.cs" />
+    <Compile Include="Indicators\IndicatorSuperBollinger.cs" />
+    <Compile Include="Market\IMarketModel.cs" />
+    <Compile Include="Market\MarketModelBus.cs" />
+    <Compile Include="Market\Price.cs" />
+    <Compile Include="Market\PriceSet.cs" />
+    <Compile Include="Market\PriceType.cs" />
+    <Compile Include="Network\ConnectionTradingListener.cs" />
+    <Compile Include="Network\TradingBusServer.cs" />
+    <Compile Include="Optimizer\IEvaluator.cs" />
+    <Compile Include="Optimizer\IOptimizer.cs" />
+    <Compile Include="Optimizer\OptimizationResult.cs" />
+    <Compile Include="Optimizer\OptimizerExaustive.cs" />
+    <Compile Include="Optimizer\ParameterAxis.cs" />
+    <Compile Include="Optimizer\IncrementType.cs" />
+    <Compile Include="Optimizer\ParameterIncrement.cs" />
+    <Compile Include="Optimizer\ParameterSet.cs" />
+    <Compile Include="Market\IMarketModelSimulation.cs" />
+    <Compile Include="Market\IMarketModelIndicator.cs" />
+    <Compile Include="Market\MarketManagerLoopback.cs" />
+    <Compile Include="Market\MarketManagerSimulationFast.cs" />
+    <Compile Include="Market\MarketModelSimulation.cs" />
+    <Compile Include="Market\MarketResult.cs" />
+    <Compile Include="Market\IMarketManager.cs" />
+    <Compile Include="Market\PriceCandle.cs" />
+    <Compile Include="Market\TradingSymbol.cs" />
+    <Compile Include="Market\TradingAgenda.cs" />
+    <Compile Include="Optimizer\EvaluatorSingle.cs" />
+    <Compile Include="Indicators\IIndicator.cs" />
+    <Compile Include="Indicators\LoopbackIndicatorWrapper.cs" />
+    <Compile Include="Indicators\IndicatorRunningAverage.cs" />
+    <Compile Include="IO\ToolsIOHST.cs" />
+    <Compile Include="Tools\DatabasePrices.cs" />
+    <Compile Include="Tools\ForexFactoryEvent.cs" />
+    <Compile Include="MT4\MT4Server.cs" />
+    <Compile Include="Network\ConnectionTradingOnClient.cs" />
+    <Compile Include="Network\ConnectionTradingOnServer.cs" />
+    <Compile Include="Network\Requests\RequestAccountOnTick.cs" />
+    <Compile Include="Network\Requests\RequestAccountOnTimer.cs" />
+    <Compile Include="Network\Requests\RequestConnectAccount.cs" />
+    <Compile Include="Network\Requests\RequestConnectProvideExpert.cs" />
+    <Compile Include="Network\Requests\RequestConnectProvideIndicator.cs" />
+    <Compile Include="Network\Requests\RequestDisconnect.cs" />
+    <Compile Include="Network\Requests\RequestType.cs" />
+    <Compile Include="Network\Response\AResponse.cs" />
+    <Compile Include="Network\Response\ResponseAccountOnTick.cs" />
+    <Compile Include="Network\Response\ResponseAccountOnTimer.cs" />
+    <Compile Include="Network\Response\ResponseConnectAccount.cs" />
+    <Compile Include="Network\Response\ResponseConnectProvideExpert.cs" />
+    <Compile Include="Network\Response\ResponseConnectProvideIndicator.cs" />
+    <Compile Include="Network\Response\ResponseDisconnect.cs" />
+    <Compile Include="Network\Response\ResponseType.cs" />
+    <Compile Include="Network\TradingBusClient.cs" />
+    <Compile Include="Network\Requests\ARequest.cs" />
+    <Compile Include="Network\TradingRequestHandler.cs" />
+    <Compile Include="Network\TradingResponseHandler.cs" />
+    <Compile Include="Optimizer\ParameterValue.cs" />
+    <Compile Include="Optimizer\ParameterGrid.cs" />
+    <Compile Include="Policy\APolicyTemplate.cs" />
+    <Compile Include="Policy\IPolicyTemplate.cs" />
+    <Compile Include="Policy\PolicyJaapBands.cs" />
+    <Compile Include="Policy\PolicyRunLength.cs" />
+    <Compile Include="Policy\PolicyExpectation.cs" />
+    <Compile Include="Policy\PolicyMachineLearning.cs" />
+    <Compile Include="Policy\PolicyPyramid.cs" />
+    <Compile Include="Policy\PolicyTemplateRunningAverageDual.cs" />
+    <Compile Include="Policy\PolicyRunningAverageDual.cs" />
+    <Compile Include="Policy\PolicyRunningAverageLong.cs" />
+    <Compile Include="Policy\IPolicy.cs" />
+    <Compile Include="Policy\PolicyPassiveLong.cs" />
+    <Compile Include="Market\TradingOrder.cs" />
+    <Compile Include="Market\TradingOrderCommand.cs" />
+    <Compile Include="Market\TradingOrderType.cs" />
+    <Compile Include="Policy\PolicySVMHistoryRaw.cs" />
+    <Compile Include="Policy\PolicyTemplateJaapBands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Market\TimeScale.cs" />
+    <Compile Include="Tools\ToolsDataSet.cs" />
+    <Compile Include="Tools\ToolsForexFactory.cs" />
+    <Compile Include="Tools\ToolsPrice.cs" />
+    <Compile Include="Tools\ToolsTradingPlotting.cs" />
+    <Compile Include="Tools\DatabaseTradingCalender.cs" />
+    <Compile Include="Tools\TradingCalenderEvent.cs" />
+    <Compile Include="Tools\TradingConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KozzionCore\KozzionCore.csproj">
+      <Project>{8102cced-b941-4766-aff8-7c2282506932}</Project>
+      <Name>KozzionCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KozzionMachineLearning\KozzionMachineLearning.csproj">
+      <Project>{6fdf2e5f-5821-49a6-aba7-3f85ebc510be}</Project>
+      <Name>KozzionMachineLearning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KozzionMathematics\KozzionMathematics.csproj">
+      <Project>{46a68a25-5d99-45e3-b206-0c1c03ceba32}</Project>
+      <Name>KozzionMathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KozzionPlotting\KozzionPlotting.csproj">
+      <Project>{e7959ea0-5c64-476c-888f-831e056a059d}</Project>
+      <Name>KozzionPlotting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exectation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
